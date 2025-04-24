@@ -134,6 +134,9 @@ html {
 /* Mobile menu styles */
 .navbar__toggle {
   display: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .bar {
@@ -148,6 +151,8 @@ html {
 /* Main content styles */
 .main {
   background-color: #e1d9d9;
+  position: relative;
+  z-index: 1;
 }
 
 .main__container {
@@ -201,13 +206,7 @@ html {
 /* Responsive styles for mobile */
 @media screen and (max-width: 960px) {
   .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0 30px;
+    position: relative; /* Ensure the container is a positioning context */
   }
 
   .navbar__menu {
@@ -225,12 +224,19 @@ html {
   }
 
   .navbar__menu.active {
-    top: 100%;
+    background: rgb(3, 51, 12);
+    top: 80px;
+    left: 0;
+    width: 100%; 
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
     height: auto;
+    width: 100vw; /* Full viewport width */
+    left: 0; /* Align to left edge of screen */
+    margin: 0;
     padding: 30px 0;
+    position: fixed;
   }
 
   #navbar__logo {
@@ -239,9 +245,9 @@ html {
   }
 
   .navbar__toggle {
-    display: block;
+    display: flex;
     cursor: pointer;
-    margin-right: 10px;
+    align-items: center;
   }
 
   .navbar__toggle.is-active .bar:nth-child(2) {
