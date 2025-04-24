@@ -69,5 +69,29 @@
         </div>
       </div>
     </div>
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenu = document.querySelector('#mobile-menu');
+      const menuLinks = document.querySelector('.navbar__menu');
+      
+      if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
+          mobileMenu.classList.toggle('is-active');
+          menuLinks.classList.toggle('active');
+        });
+      }
+      
+      // Check screen size on resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 960) {
+          if (menuLinks.classList.contains('active')) {
+            menuLinks.classList.remove('active');
+          }
+          if (mobileMenu.classList.contains('is-active')) {
+            mobileMenu.classList.remove('is-active');
+          }
+        }
+      });
+    </script>
   </body>
 </html>

@@ -59,13 +59,38 @@
         </div>
         <div class="main__img--container">
           <img
-            class="hero_image"
             src="images/IMG-20220117-WA0063.jpg"
             alt="Jacob Knight"
             id="main__img"
+            class="hero_image"
           />
         </div>
       </div>
     </div>
+
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenu = document.querySelector('#mobile-menu');
+      const menuLinks = document.querySelector('.navbar__menu');
+      
+      if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
+          mobileMenu.classList.toggle('is-active');
+          menuLinks.classList.toggle('active');
+        });
+      }
+      
+      // Check screen size on resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 960) {
+          if (menuLinks.classList.contains('active')) {
+            menuLinks.classList.remove('active');
+          }
+          if (mobileMenu.classList.contains('is-active')) {
+            mobileMenu.classList.remove('is-active');
+          }
+        }
+      });
+    </script>
   </body>
 </html>
