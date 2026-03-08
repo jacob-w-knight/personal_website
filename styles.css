@@ -294,6 +294,24 @@ html {
   }
 }
 
+/* CV download button */
+.cv-download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  background: rgb(3, 51, 12);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cv-download-btn:hover {
+  background: rgba(3, 51, 12, 0.7);
+}
+
 /* Responsive layout for smaller screens */
 @media screen and (max-width: 768px) {
   .main__container {
